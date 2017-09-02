@@ -14,6 +14,10 @@ import UIKit
 
 class ExpandableTableViewVC: UIViewController {
     
+//=============================================================//
+//MARK: Stored Property
+//=============================================================//
+    
     let sectionArray = ["Mobile","Laptop","City","Car","Country","Gender"]
     let listOne = ["Sony", "MotoRola","Nokia","Samsung","Lenevo","Mi"]
     let listTwo = ["Sony", "Dell", "Mac","Lenevo","Hp"]
@@ -24,11 +28,18 @@ class ExpandableTableViewVC: UIViewController {
     
     var imageNameArray = [String]()
     
+//=============================================================//
+//MARK: Defining IBOutlet for UITableView
+//=============================================================//
+    
     @IBOutlet weak var expandableTableView: UITableView!
+    
+//=============================================================//
+//MARK: View Method
+//=============================================================//
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.expandableTableView.delegate = self
         self.expandableTableView.dataSource = self
@@ -38,6 +49,10 @@ class ExpandableTableViewVC: UIViewController {
         }
         
     }
+    
+//======================================================================//
+//MARK: Setting for viewing the inside list
+//======================================================================//
     
     @IBAction func expandImageBtnTapped(_ sender: UIButton) {
         
@@ -54,8 +69,15 @@ class ExpandableTableViewVC: UIViewController {
 
 }
 
+//=============================================================//
+//MARK: ExpandableTableViewVC Class Extension
+//=============================================================//
 
-extension ExpandableTableViewVC: UITableViewDelegate, UITableViewDataSource{
+extension ExpandableTableViewVC: UITableViewDelegate, UITableViewDataSource {
+    
+//=============================================================//
+//MARK: Setting Number Of Cells
+//=============================================================//
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
@@ -82,6 +104,10 @@ extension ExpandableTableViewVC: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+//=============================================================//
+//MARK: Setting the Cell View
+//=============================================================//
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellForRowClass_ID", for: indexPath) as? CellForRowClass else { fatalError() }
@@ -106,6 +132,10 @@ extension ExpandableTableViewVC: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+//=============================================================//
+//MARK: Setting the Cell Header View
+//=============================================================//
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: "cellForRowClass_ID") as? CellForRowClass else { fatalError("Cell Failed to load") }
@@ -120,21 +150,33 @@ extension ExpandableTableViewVC: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+//=============================================================//
+//MARK: Setting Height Of the Cell
+//=============================================================//
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+//=============================================================//
+//MARK: Setting the number of Sections
+//=============================================================//
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionArray.count
     }
     
+//=============================================================//
+//MARK: Setting Height Of the Cell Header
+//=============================================================//
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100
     }
     
-    //=============================================================//
-    //MARK: User Define Method for Getting IndexPath
-    //=============================================================//
+//=============================================================//
+//MARK: User Define Method for Getting IndexPath
+//=============================================================//
     
     func getCell(button: UIButton) -> UITableViewCell{
         var cell : UIView = button
@@ -146,12 +188,18 @@ extension ExpandableTableViewVC: UITableViewDelegate, UITableViewDataSource{
         guard let tableCell = cell as? CellForRowClass else {fatalError()}
         return tableCell
     }
-    
-    
+ 
 }
 
+//=============================================================//
+//MARK: Class for Cell UIViews
+//=============================================================//
 
 class CellForRowClass: UITableViewCell {
+    
+//=============================================================//
+//MARK: TableView IBOutlets
+//=============================================================//
     
     @IBOutlet weak var expandImageBtnName: UIButton!
     
