@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="customHeader_ID" id="iN0-l3-epB" customClass="CustomHeader" customModule="ExpandableUITableView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="448" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-WG-5Uw">
+                    <rect key="frame" x="40" y="20" width="158" height="53"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3md-wF-upW">
+                    <rect key="frame" x="388" y="26.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="O2Z-DF-ASg"/>
+                        <constraint firstAttribute="height" constant="40" id="rIj-ql-vRQ"/>
+                    </constraints>
+                    <state key="normal" image="down"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="AE2-WG-5Uw" secondAttribute="trailing" constant="250" id="JkW-PZ-fRf"/>
+                <constraint firstAttribute="bottom" secondItem="AE2-WG-5Uw" secondAttribute="bottom" constant="20" id="axz-OI-TNe"/>
+                <constraint firstItem="3md-wF-upW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nZ1-eU-ne6"/>
+                <constraint firstItem="AE2-WG-5Uw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="ucv-pc-36T"/>
+                <constraint firstAttribute="trailing" secondItem="3md-wF-upW" secondAttribute="trailing" constant="20" id="vgK-2c-ydj"/>
+                <constraint firstItem="AE2-WG-5Uw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="wNM-5c-ccd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerNameLabel" destination="AE2-WG-5Uw" id="1fK-Ug-yWv"/>
+                <outlet property="upDownImageBtnName" destination="3md-wF-upW" id="aFN-Dg-ZmO"/>
+            </connections>
+            <point key="canvasLocation" x="55" y="-231.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="down" width="512" height="512"/>
+    </resources>
+</document>
